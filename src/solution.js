@@ -48,6 +48,34 @@
         graph.set(174, [230, 364])
         graph.set(135, [230, 116])
         graph.set(262, [116, 101, 364, 163, 153, 158])
+
+
+        answer = []
+        visited = new Map();
+        
+        
+        function dfs(node, result) {
+            if (location.get(destination).includes(node)) {
+                answer.push(result.map((x) => x))
+            }
+            if (visited.has(node)) { return }
+            visited.set(node, true)
+
+            if (graph.has(node)) {
+                for (const children of graph.get(node)) {
+                    result.push(children)
+                    dfs(children, result)
+                    result.pop()
+                }
+            }
+        }
+        
+        for (const street of location.get(start_location)) {
+            dfs(street, [street])
+        }
+        
+        return answer
+    }
     
     console.log(question('AM', 'BA'))
 }());
