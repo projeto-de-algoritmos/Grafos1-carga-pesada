@@ -1,6 +1,8 @@
-(function main() {
-    function question(start_location, destination) {
-        BR = new Map();
+import React from 'react';
+
+class Solution {
+    static question(start_location, destination) {
+        const BR = new Map();
         BR.set('116', ['RS', 'SC', 'PR', 'SP', 'MG', 'BA', 'PE', 'CE']);
         BR.set('101', ['RS', 'SC', 'PR', 'SP', 'RJ', 'ES', 'BA', 'SE', 'AL', 'PE', 'PB', 'RN']);
         BR.set('364', ['AC', 'RO', 'MT', 'GO', 'SP']);
@@ -12,7 +14,8 @@
         BR.set('135', ['MA', 'PI', 'BA', 'MG']);
         BR.set('262', ['MS', 'MG', 'ES', 'SP']);
 
-        location = new Map();
+        
+        const location = new Map();
         location.set('MG', [116, 153, 135, 262]);
         location.set('BA', [116, 101, 135])
         location.set('PE', [116, 101])
@@ -35,9 +38,12 @@
         location.set('RN', [101])
         location.set('PA', [230, 163, 153, 158])
         location.set('RR', [174])
+        location.set('MA', [135, 230])
+        location.set('PI', [135, 230])
+        location.set('MS', [262, 158, 163])
 
 
-        graph = new Map();
+        const graph = new Map();
         graph.set(116, [262, 230, 135])
         graph.set(101, [262])
         graph.set(364, [174, 163, 158, 153, 262])
@@ -50,13 +56,14 @@
         graph.set(262, [116, 101, 364, 163, 153, 158])
 
 
-        answer = []
-        visited = new Map();
+        let answer = []
+        let visited = new Map();
         
         
         function dfs(node, result) {
             if (location.get(destination).includes(node)) {
                 answer.push(result.map((x) => x))
+                return
             }
             if (visited.has(node)) { return }
             visited.set(node, true)
@@ -74,8 +81,18 @@
             dfs(street, [street])
         }
         
-        return answer
+        return this.transformOutput(answer)
     }
-    
-    console.log(question('AM', 'BA'))
-}());
+
+    static transformOutput(arr) {
+        let output = ''
+
+        for (let i = 0; i < arr.length; i++) {
+            output += `Possibilidade ${i} - ` + arr[i].toString() + ' | '
+        }
+      
+        return output
+    }
+}
+
+export default Solution;
