@@ -1,8 +1,23 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const MapContainer = styled.div`  
+  display: flex;
+  width: 70vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Map = styled.div`
   margin: 1rem auto;
-  width: 700px;
+  width: 60%;
+  height: 90%;
 
   svg {
     stroke: #fff;

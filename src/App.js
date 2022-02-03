@@ -1,8 +1,9 @@
 import { VectorMap } from '@south-paw/react-vector-maps';
 import React from 'react';
-import BrMap from './brMap';
-import { Map } from './styles';
+import BrMap from './map/brMap';
+import { Container, Map, MapContainer } from './styles';
 import Solution from './graph/Solution';
+import Sidebar from './components/SideBar';
 
 function App() {
   const solution = new Solution()
@@ -47,16 +48,19 @@ function App() {
   };
 
   return (
-    <div style={style}>
-      <Map>
-        <VectorMap {...BrMap} layerProps={layerProps} checkedLayers={selected}/>
-      </Map>
-      <hr />
-      <p>Hovered: {hovered && <code>{hovered}</code>}</p>
-      <p>Focused: {focused && <code>{focused}</code>}</p>
-      <p>Clicked: {clicked && <code>{clicked}</code>}</p>
-      <p>Output: {output}</p>
-    </div>
+    <Container>
+      <Sidebar />
+      <MapContainer>
+        <Map>
+          <VectorMap {...BrMap} layerProps={layerProps} checkedLayers={selected} />
+        </Map>
+        {/* <hr />
+        <p>Hovered: {hovered && <code>{hovered}</code>}</p>
+        <p>Focused: {focused && <code>{focused}</code>}</p>
+        <p>Clicked: {clicked && <code>{clicked}</code>}</p> */}
+        <p>Output: {output}</p>
+      </MapContainer>
+    </Container>
   );
 }
 
