@@ -4,6 +4,7 @@ import BrMap from './map/brMap';
 import { Container, Map, MapContainer } from './styles';
 import Solution from './graph/Solution';
 import Sidebar from './components/SideBar';
+import ReasultModal from './components/ResultModal';
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
   const [output, setOutput] = useState('None');
   const [starting, setStarting] = useState('None');
   const [destiny, setDestiny] = useState('None');
+  const [modal, setModal] = useState(false);
 
   const layerProps = {
     onFocus: ({ target }) => setFocused(target.attributes.name.value),
@@ -40,19 +42,22 @@ const App = () => {
 
   return (
     <Container>
+      {modal && <ReasultModal 
+        visible={modal}
+        setVisible={setModal}
+        output={output}
+      />}
       <Sidebar
         starting={starting}
         setStarting={setStarting}
         destiny={destiny}
         setDestiny={setDestiny}
+        openModal={() => setModal(true)}
       />
       <MapContainer>
         <Map>
           <VectorMap {...BrMap} layerProps={layerProps} checkedLayers={[starting, destiny]} />
         </Map>
-        <p>Starting: {starting}</p>
-        <p>Destiny: {destiny}</p>
-        <p>Output: {output}</p>
       </MapContainer>
     </Container >
   );

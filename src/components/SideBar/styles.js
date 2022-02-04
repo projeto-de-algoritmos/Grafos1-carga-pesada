@@ -32,7 +32,8 @@ export const Logo = styled.img`
 
 export const LocalContainer = styled.div`
   width: 80%;
-  height: 40%;
+  min-height: 20%;
+
 
   p {
     color: white;
@@ -43,10 +44,25 @@ export const LocalContainer = styled.div`
     border-radius: 10px;
     border: 0px;
     width: 95%;
-    height: 8%;
-  }
-  .select-selected {
-    background-color: red;
+    height: 16%;
   }
   
+`;
+
+export const ButtonContainer = styled.div`
+  min-width: 60%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+export const ConfirmButton = styled.button`
+  width: 90%;
+  height: 45px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
 `;
