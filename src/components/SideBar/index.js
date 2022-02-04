@@ -1,8 +1,9 @@
 import React from 'react';
 import { Contianer, LocalContainer, Logo, LogoContainer, Text } from './styles';
+import states from './states'
 import logo from '../../assets/logo.png';
 
-const Sidebar = () => {
+const Sidebar = ({ starting, setStarting, destiny, setDestiny }) => {
   return(
     <Contianer>
       <LogoContainer>
@@ -11,20 +12,14 @@ const Sidebar = () => {
       </LogoContainer>
       <LocalContainer>
         <p>Local de origem: </p>
-        <select>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
+        <select value={starting} onChange={(e) => setStarting(e.target.value)}>
+          <option id='None' key='None'>Escola um estado</option>
+          {states.map((state) => <option value={state.id} key={state.id}>{state.name}</option>)}
         </select>
         <p>Local de destino: </p>
-        <select>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
-          <option>Estado</option>
+        <select value={destiny} onChange={(e) => setDestiny(e.target.value)}>
+          <option id='None' key='None'>Escola um estado</option>
+          {states.map((state) => <option value={state.id} key={state.id}>{state.name}</option>)}
         </select>
       </LocalContainer>
     </Contianer>
