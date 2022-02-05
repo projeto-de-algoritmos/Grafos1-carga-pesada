@@ -85,13 +85,7 @@ class Solution {
     }
 
     static transformOutput(arr) {
-        let output = ''
-
-        for (let i = 0; i < arr.length; i++) {
-            output += `Possibilidade ${i} - ` + arr[i].toString() + ' | '
-        }
-      
-        return output
+        return arr.map((value) => <li>{value.toString()}</li>);
     }
 }
 
