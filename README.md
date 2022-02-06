@@ -2,43 +2,47 @@
 
 Temas:
  - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
 
 # NomedoProjeto
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 27<br>
+**Conteúdo da Disciplina**: Grafos 1<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 16/0120918  |  Gabriel de Jesus Carvalho |
+| 18/0054554  |  Paulo Batista |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O carga pesada é um site para ajudar os famosos caminhoneiros, Pedro e Bino, a conseguirem se deslocar pelas maiores BRs do Brasil e fazerem suas entregas. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![Image inicial](./doc/img1.png)
+
+![Image dos estados selecionados](./doc/img2.png)
+
+
+![Image do resultado](./doc/img3.png)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: JavaScript<br>
+**Framework**: React<br>
+Para rodar o projeto é necessário ter o NodeJs e o Yarn instalados.
+
+Para instalar as dependências: 
+
+```
+  yarn install
+```
+Para executar o projeto: 
+
+```
+  yarn start
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Basta selecionar o estados de origem, estado de destino e gerar a rota.
 
 
 

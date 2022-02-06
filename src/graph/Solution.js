@@ -62,7 +62,7 @@ class Solution {
         
         function dfs(node, result) {
             if (location.get(destination).includes(node)) {
-                answer.push(result.map((x) => x))
+                answer.push(result.map((x) => ` BR-${x}`))
                 return
             }
             if (visited.has(node)) { return }
@@ -85,7 +85,7 @@ class Solution {
     }
 
     static transformOutput(arr) {
-        return arr.map((value) => <li>{value.toString()}</li>);
+        return arr.map((value, index) => <li>{`Rota ${index + 1}: ${value.toString()}`}</li>);
     }
 }
 

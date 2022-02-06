@@ -31,6 +31,10 @@ const App = () => {
   };
 
   useEffect(() => {
+    if(starting === 'None' && destiny === 'None'){
+      setOutput('Selecione os estados');
+      return;
+    }
     if (starting && destiny) {
       try {
         const result = Solution.question(starting, destiny);

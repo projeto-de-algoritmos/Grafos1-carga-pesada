@@ -47,6 +47,10 @@ export const Body = styled.div`
   font-size: 1.3rem;
   text-align: center;
   overflow: auto;
+
+  p {
+    height: 300px;
+  }
 `;
 
 export const Footer = styled.div`
