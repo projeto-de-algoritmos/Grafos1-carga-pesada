@@ -1,9 +1,9 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
-
 Temas:
  - Grafos1
 
-# NomedoProjeto
+# Grafos 1 - Carga Pesada
+
+![Logo](./doc/cargapesada.jpg)
 
 **Número da Lista**: 27<br>
 **Conteúdo da Disciplina**: Grafos 1<br>
